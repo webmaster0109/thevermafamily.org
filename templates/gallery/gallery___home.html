@@ -1,0 +1,119 @@
+{% extends "base/base.html" %}
+
+{% block og_title %}The Verma Family's Gallery{% endblock %}
+{% block title %}Gallery | The Verma Family{% endblock %}
+
+{% block content %}
+<style>
+    .main .gallery__image {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 1rem;
+        justify-content: center;
+        align-items: center;
+    }
+    .main .card {
+        color: #252a32;
+        border-radius: 2px;
+        border: 0;
+        background: #fff;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.24);
+    }
+    .main .card-image {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 450px;
+        padding-top: 70%;
+        background: #fff;
+    }
+    .main .card-image img {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+    }
+
+    .gallery___image__heading {
+        text-align: start;
+        font-family: 'DM Serif Text', serif;
+        font-weight: 400;
+        font-size: 4rem;
+        position: relative;
+        background-image: linear-gradient(to right, #AA7234, #a15707);
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+
+    .gallery___image__heading::after {
+        position: absolute;
+        content: '';
+        bottom: 0;
+        left: 0;
+        width: 200px;
+        display: block;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #a15707;
+    }
+    .gallery__image span {
+        font-family: 'Raleway', sans-serif;
+        font-weight: 400;
+        font-size: 1.4rem;
+        color: #a15707;
+    }
+
+    @media only screen and (max-width: 720px) {
+        .main .gallery__image {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 1rem;
+        }
+        .gallery___image__heading {
+            font-size: 2.5rem;
+        }
+        .gallery___image__heading::after {
+            display: none;
+        }
+        .gallery__image span {
+            font-size: 1.1rem;
+        }
+    }
+</style>
+
+<div class="main">
+    <div class="container gallery__image">
+        <div class="row">
+            <div class="col-12 col-md-12 col-lg-12">
+                <span>The Verma Family's</span>
+                <h1 class="gallery___image__heading">The Gallery</h1>
+            </div>
+        </div>
+        {% for img in galleries %}
+        <div class="card">
+            <div class="card-image">
+                <a href="{{img.url}}" data-fancybox="gallery">
+                    <img src="{{img.url}}" alt="VFO_Gallery_{{img.title}}">
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+    $('[data-fancybox="gallery"]').fancybox({
+        buttons: [
+            "slideShow",
+            "thumbs",
+            "close"
+        ],
+        loops: false,
+        protect: true
+    })
+</script>
+{% endblock content %}

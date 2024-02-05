@@ -1,0 +1,7 @@
+django
+python-dateutil
+gunicorn
+django-ckeditor-5
+django-hitcount
+django-dotenv
+pytz

@@ -1,0 +1,33 @@
+<header class="main-menu p-3 mb-3 border-bottom sticky-top">
+    <nav class="navbar navbar___menu navbar-expand-lg">
+        <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img src="https://ik.imagekit.io/thevermafamily/Logo%20and%20Logo/logo.png" alt="logo" width="90"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="nav col-12 col-lg-auto ms-lg-auto mb-2 justify-content-center mb-md-0">
+                {% url "home__index" as url %}
+                <li><a href="{{url}}" class="nav-link px-2 {% if request.path == url %}active{% endif %}">Home</a></li>
+                {% url "home__about" as url %}
+                <li><a href="{{url}}" class="nav-link px-2 {% if request.path == url %}active{% endif %}">About us</a></li>
+                {% url "home___about__shrikant" as url %}
+                <li><a href="{{url}}" class="nav-link px-2 {% if request.path == url %}active{% endif %}">Late Shrikant Verma</a></li>
+                {% url "home___about__veena" as url %}
+                <li><a href="{{url}}" class="nav-link px-2 {% if request.path == url %}active{% endif %}">Veena Verma</a></li>
+                {% url "home___about__abhishek" as url %}
+                <li><a href="{{url}}" class="nav-link px-2 {% if request.path == url %}active{% endif %}">Abhishek Verma</a></li>
+                {% url "home___about__anca" as url %}
+                <li><a href="{{url}}" class="nav-link px-2 {% if request.path == url %}active{% endif %}">Anca Verma</a></li>
+                {% url "home___about__nicolle" as url %}
+                <li><a href="{{url}}" class="nav-link px-2 {% if request.path == url %}active{% endif %}">Nicolle Verma</a></li>
+                {% url "home___gallery" as url %}
+                <li><a href="{{url}}" class="nav-link px-2 {% if request.path == url %}active{% endif %}">Gallery</a></li>
+                <li><a href="#" class="nav-link px-2">Family Tree</a></li>
+                {% url "home___contact" as url %}
+                <li><a href="{{url}}" class="nav-link px-2 {% if request.path == url %}active{% endif %}">Contact</a></li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+</header>

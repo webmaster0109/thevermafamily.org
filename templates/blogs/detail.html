@@ -1,0 +1,40 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+<style>
+    .blog___page .col-md-4 {
+        margin-top: 40px;
+    }
+    .blog___page__span {
+        font-family: 'Raleway', sans-serif;
+        font-weight: 400;
+        font-size: 1.2rem;
+        color: #a15707;
+    }
+    .blog___detail img {
+        margin-top: 25px;
+        width: 100%;
+    }
+    .blog___detail__paragraph {
+        margin-top: 30px;
+    }
+    .blog___detail__paragraph p {
+        font-family: 'Raleway', sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        color: #000;
+    }
+</style>
+<div class="container">
+  <div class="row blog___detail">
+    <div class="col-12 col-md-12 col-lg-12">
+        <span class="blog___page__span">The Verma Family</span>
+        <h1 class="about___us__chapter__title">{{blog.title}}</h1>
+        <img src="{{blog.blog_image.url}}" alt="{{blog.title}}" />
+        <div class="blog___detail__paragraph">
+            <p>{{blog.body|safe}}</p>
+        </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

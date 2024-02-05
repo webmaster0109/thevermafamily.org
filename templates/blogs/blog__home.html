@@ -1,0 +1,46 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+
+<style>
+    .blog___page .col-md-4 {
+        margin-top: 40px;
+    }
+    .blog___page__span {
+        font-family: 'Raleway', sans-serif;
+        font-weight: 400;
+        font-size: 1.2rem;
+        color: #a15707;
+    }
+</style>
+
+<div class="container">
+  <div class="row blog___page">
+        <div class="col-12 col-md-12 col-lg-12">
+          <span class="blog___page__span">The Verma Family</span>
+          <h1 class="about___us__chapter__title">News Articles</h1>
+        </div>
+        {% for blog in blogs %}
+        <div class="col-12 col-md-4 col-lg-4">
+            <div class="card second___card">
+                <div class="card-body card___body">
+                    <div class="d-flex">
+                        <div class="flex-grow-1"><p>Latest News</p></div>
+                        <div><span>{{blog.created_at|date:'d F Y'}}</span></div>
+                    </div>
+                    <h5 class="card-title mt-1">{{blog.title}}</h5>
+                    <div class="mt-5 d-flex">
+                        <div>
+                            <a href="{% url 'blog___detail' blog.slug %}" class="the___all__link">Continue Reading</a>
+                        </div> 
+                        <div>
+                            <i class="bi bi-caret-right-fill"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+  </div>
+</div>
+{% endblock content %}

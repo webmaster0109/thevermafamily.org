@@ -1,0 +1,96 @@
+<!doctype html>
+<html amp lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}The Verma Family | Home{% endblock %}</title>
+    <meta name="theme-color" content="#AA7234">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="{% block meta_desc %}The Verma Family is one of the most prominent and influential political and business families in India. Their lineage in the circles that matter has been since the 16th century. They were foremost freedom fighters as royals led by Late who did not join the British empire in 1800’s and funded the freedom struggle as well as the Indian soldiers revolt against the British colonialists in 1857.{% endblock %}">
+    <meta name="keywords" content="the verma family, the private office of verma family, verma family, abhishek verma, billionaire arms dealer, lord or war, anca verma, nicolle verma, late shrikant verma, shrikant verma, veena verma">
+    
+    <meta property="og:title" content="{% block og_title %}The Verma Family{% endblock %}">
+    <meta property="og:site_name" content="The Private Office of Verma Family">
+    <meta property="og:description" content="The Verma Family is one of the most prominent and influential political and business families in India. Their lineage in the circles that matter has been since the 16th century. They were foremost freedom fighters as royals led by Late who did not join the British empire in 1800’s and funded the freedom struggle as well as the Indian soldiers revolt against the British colonialists in 1857.">
+    <meta property="og:image" content="https://ik.imagekit.io/thevermafamily/vermafamily.png">
+    <!--<meta property='og:image:width' content='200' />-->
+    <!--<meta property='og:image:height' content='250' />-->
+    <meta property="og:url" content="https://www.thevermafamily.org/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" type="image/x-icon" href="/media/images/logo/logo.png">
+    <link rel="manifest" href="/media/json/manifest.json">
+    <link rel="apple-touch-icon" sizes="180x180" href="/media/images/logo/logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/media/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        body {
+            background-image: url(https://ik.imagekit.io/thevermafamily/background/bg-logo.png);
+            background-repeat: no-repeat;
+            background-position: bottom center;
+            background-attachment: fixed;
+            background-size: contain;
+            font-family: 'DM Serif Text', serif;
+            line-height: 1.4;
+            overflow-y: scroll;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+    <script type="application/ld+json">
+        {
+          "@content": "https://schema.org/",
+          "@type": "Website",
+          "name": "The Private Office of Verma Family",
+          "alternateName": "The Verma Family",
+          "description": "The Verma family is one of the most prominent and influential political and business families in India. Their lineage in the circles that matter has been since the 16th century. They were foremost freedom fighters as royals who did not join the British empire in 1800’s and funded the freedom struggle as well as the Indian soldiers revolt against the British colonialists in 1857 from Bihar.",
+          "url": "https://www.thevermafamily.org/",
+          "logo": "https://ik.imagekit.io/thevermafamily/Logo%20and%20Logo/logo.png",
+          "email": "contact@thevermafamily.org",
+          "telephone": "+91 8880 004 111",
+          "location": "NEW DELHI, INDIA",
+          "maps": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.9850195058702!2d77.14576167620027!3d28.4799977909898!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce029f0679a5d%3A0xda7c71e9d413a73c!2sThe%20Private%20Office%20of%20Verma%20Family!5e0!3m2!1sen!2sin!4v1705993220210!5m2!1sen!2sin",
+          "contactPoint" : [{
+              "@type": "ContactPoint",
+              "telephone": "+91 8880 004 111",
+              "contactType": "Office Number",
+              "addressRegion": "Customer Support",
+              "areaServed": "India"
+          }],
+          
+          "address" : [{
+              "@type": "PostalAddress",
+              "streetAddress": "Qutab Stud Farm, 14-B, Gadaipur, DLF Farms",
+              "addressLocality": "Chattarpur",
+              "addressRegion": "New Delhi",
+              "postalCode": "110030",
+              "addressCountry": "India"
+          }]
+        }
+        </script>
+    
+  </head>
+  <body>
+    <main class="background-white">
+        {% include "base/includes/header.html" %}
+        {% block content %}{% endblock content %}
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <div style="display: none;">
+      <p>Visitor IP Address: {{ visitor.ip_address }}</p>
+      <p>Landing Page: {{ visitor.landing_page }}</p>
+      <p>Visit Time: {{ visitor.visit_time }}</p>
+      <p>Departure Time: {{ visitor.departure_time }}</p>
+      <p>Time on Page: {{ visitor.time_on_page }}</p>
+    </div>
+  </body>
+</html>

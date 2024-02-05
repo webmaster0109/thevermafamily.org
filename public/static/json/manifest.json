@@ -1,0 +1,44 @@
+{
+    "name": "The Private Office of Verma Family",
+    "short_name": "The Verma Family",
+    "description": "The Verma family is one of the most prominent and influential political and business families in India. Their lineage in the circles that matter has been since the 16th century. They were foremost freedom fighters as royals who did not join the British empire in 1800’s and funded the freedom struggle as well as the Indian soldiers revolt against the British colonialists in 1857 from Bihar.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#AA7234",
+    "orientation": "portrait",
+    "lang": "en-US",
+    "dir": "ltr",
+    "scope": "/",
+    "icons": [
+      {
+        "src": "/media/images/logo/logo.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "/path/to/maskable-icon.png",
+        "sizes": "192x192",
+        "type": "image/png",
+        "purpose": "maskable"
+      },
+      {
+        "src": "/media/images/logo/logo.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+    "screenshots": [
+      {
+        "src": "/media/images/others/vermafamily.jpg",
+        "sizes": "640x480",
+        "type": "image/jpg"
+      },
+      {
+        "src": "/media/images/others/vermafamily.jpg",
+        "sizes": "1024x768",
+        "type": "image/jpg"
+      }
+    ],
+    "prefer_related_applications": false
+}

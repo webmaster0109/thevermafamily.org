@@ -1,0 +1,47 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row contact___us">
+        <div class="col-md-12 col-12 col-lg-12">
+            <h1 class="contact___title">Contact us</h1>
+        </div>
+        <div class="col-md-6 col-lg-6 col-12">
+            <div class="contact___us__heading">
+                <div class="contact___iframe">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.9850195058702!2d77.14576167620027!3d28.4799977909898!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce029f0679a5d%3A0xda7c71e9d413a73c!2sThe%20Private%20Office%20of%20Verma%20Family!5e0!3m2!1sen!2sin!4v1705753936750!5m2!1sen!2sin" 
+                    style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-6 col-12">
+            <form action="https://formspree.io/f/mqkrkzyz" method="post" class="contact___us__form">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="exampleInputName" class="form-label">Name*</label>
+                    <input type="text" name="Name" class="form-control form-control-lg" id="exampleInputName" required>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail" class="form-label">Email*</label>
+                    <input type="email" name="Email" class="form-control form-control-lg" id="exampleInputEmail" required>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputContact" class="form-label">Phone Number*</label>
+                    <input type="text" name="Phone" class="form-control form-control-lg" id="exampleInputContact" required>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputSubject" class="form-label">Subject*</label>
+                    <input type="text" name="Subject" class="form-control form-control-lg" id="exampleInputSubject" required>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Messages*</label>
+                    <textarea class="form-control" name="Message" id="exampleFormControlTextarea1" rows="4"></textarea>
+                </div>
+                <div class="mb-3">
+                    <input type="submit" class="contact___us__submit" value="Submit Message">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}

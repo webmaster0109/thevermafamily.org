@@ -1,0 +1,133 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+<div class="hero___img text-center">
+    <a href="{% url 'home__about' %}">
+        <img src="https://ik.imagekit.io/thevermafamily/Logo%20and%20Logo/logo%20-%20body.png" alt="hero-vfo-img">
+    </a>
+</div>
+<article class="article___tvf">
+<div class="container">
+    <div class="heading__section mb-5">
+        <h1 class="heading__one">The Verma Family</h1>
+        <p>The Verma Family is one of the most prominent and influential political and business families in India. Their lineage in the circles that matter has been since the 16th century. They were foremost freedom fighters as royals led by Late who did not join the British empire in 1800’s and funded the freedom struggle as well as the Indian soldiers revolt against the British colonialists in 1857.</p>
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-6">
+            <div class="card first___card">
+                <div class="card___image___container">
+                    <img src="https://ik.imagekit.io/thevermafamily/Family/late%20shrikant%20verma.JPG" class="d-block w-100" alt="skv___img">
+                    <div class="card___text__overlay">
+                        <span class="card___text__span">The Verma Family</span>
+                        <p class="card___text__paragraph">Late Shrikant Verma</p>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex">
+                        <div class="flex-grow-1"><a href="{% url 'home___about__shrikant' %}" class="card-title card___title">About Late Shrikant Verma</a></div>
+                        <div><i class="bi bi-arrow-right"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-6">
+            <div class="card first___card">
+                <div class="card___image___container">
+                    <img src="https://ik.imagekit.io/thevermafamily/Family/veena%20verma.png" class="d-block w-100" alt="vv___img">
+                    <div class="card___text__overlay">
+                        <span class="card___text__span">The Verma Family</span>
+                        <p class="card___text__paragraph">Veena Verma</p>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex">
+                        <div class="flex-grow-1"><a href="{% url 'home___about__veena' %}" class="card-title card___title">About Veena Verma</a></div>
+                        <div><i class="bi bi-arrow-right"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 col-lg-4">
+            <div class="card first___card">
+                <div class="card___image___container__second">
+                    <img src="https://ik.imagekit.io/thevermafamily/Family/abhishek%20verma.png" class="d-block w-100" alt="av___img">
+                    <div class="card___text__overlay">
+                        <span class="card___text__span">The Verma Family</span>
+                        <p class="card___text__paragraph">Abhishek Verma</p>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex">
+                        <div class="flex-grow-1"><a href="{% url 'home___about__abhishek' %}" class="card-title card___title">About Abhishek Verma</a></div>
+                        <div><i class="bi bi-arrow-right"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 col-lg-4">
+            <div class="card first___card">
+                <div class="card___image___container__second">
+                    <img src="https://ik.imagekit.io/thevermafamily/Family/anca%20verma.png" class="d-block w-100" alt="av___img">
+                    <div class="card___text__overlay">
+                        <span class="card___text__span">The Verma Family</span>
+                        <p class="card___text__paragraph">Anca Verma</p>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex">
+                        <div class="flex-grow-1"><a href="{% url 'home___about__anca' %}" class="card-title card___title">About Anca Verma</a></div>
+                        <div><i class="bi bi-arrow-right"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 col-lg-4">
+            <div class="card first___card">
+                <div class="card___image___container__second">
+                    <img src="https://ik.imagekit.io/thevermafamily/Family/nicolle%20verma.png" class="d-block w-100" alt="av___img">
+                    <div class="card___text__overlay">
+                        <span class="card___text__span">The Verma Family</span>
+                        <p class="card___text__paragraph">Nicolle Verma</p>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex">
+                        <div class="flex-grow-1"><a href="{% url 'home___about__nicolle' %}" class="card-title card___title">About Nicolle Verma</a></div>
+                        <div><i class="bi bi-arrow-right"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</article>
+<div class="container">
+    <div class="heading">
+        <h2 class="heading__two">News Section</h2>
+    </div>
+    <div class="row mb-5 mt-5">
+        {% for b in recents %}
+        <div class="col-12 col-md-4 col-lg-4">
+            <div class="card second___card">
+                <div class="card-body card___body">
+                    <div class="d-flex">
+                        <div class="flex-grow-1"><p>Latest News</p></div>
+                        <div><span>{{b.created_at|date:'d F Y'}}</span></div>
+                    </div>
+                    <h5 class="card-title mt-1">{{b.title}}</h5>
+                    <div class="mt-5 d-flex">
+                        <div>
+                            <a href="{% url 'blog___detail' b.slug %}" class="the___all__link">Continue Reading</a>
+                        </div> 
+                        <div>
+                            <i class="bi bi-caret-right-fill"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}
