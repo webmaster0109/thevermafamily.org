@@ -27,6 +27,9 @@ class Visitor(models.Model):
 
 class UniqueVisitorCount(models.Model):
     ip_address = models.GenericIPAddressField()
+    latitude = models.CharField(max_length=100, null=True, blank=True)
+    longitude = models.CharField(max_length=100, null=True, blank=True)
+    address = models.TextField(default="", null=True, blank=True)
     visit_count = models.IntegerField(default=0, null=True, blank=True)
 
     def __str__(self):
@@ -55,7 +58,7 @@ def convert_time_on_page(time):
     # Calculate minutes and seconds
     minutes = time_obj.minute
     seconds = time_obj.second + time_obj.microsecond / 1e6
-    min_sec = str(minutes) + ":" + str(int(seconds))
+    min_sec = f'{minutes} mins and {seconds} seconds'
 
     return min_sec
 

@@ -3,6 +3,8 @@ from django.http import HttpResponseNotFound
 from .models import GalleryMediaFile, Visitor, send_visitor_details_email, UniqueVisitorCount
 from vfo__blog.models import BlogsDetail
 from django.utils import timezone
+import geocoder
+import requests
 
 def get_client_ip(request):
     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
@@ -33,11 +35,28 @@ def get_visitor_logs(request):
     return new_visitor
 
 def unique_visitor_hit(ip, count):
-    unique_visitor_count, created = UniqueVisitorCount.objects.get_or_create(ip_address=ip)
+    ip_add = requests.get(f'https://ipinfo.io/{ip}?token=28c1d104f22562')
+
+    cords = ip_add.json()
+    coordinates = cords.get('loc', '').split(',')
+    latitude, longitude = map(float, coordinates)
     
+    apikey = '95871473e59048c79bb4edbb628b6600'
+    query = f'{latitude},{longitude}'
+    url = f'https://api.opencagedata.com/geocode/v1/json?key={apikey}&q={query}&pretty=1'
+
+    response = requests.get(url)
+    if response.status_code == 200:
+        data = response.json()['results'][0]
+    
+    address = data['formatted']
+    unique_visitor_count, created = UniqueVisitorCount.objects.get_or_create(ip_address=ip)
     # If it already exists, update the count
     if not created:
         unique_visitor_count.visit_count = count
+        unique_visitor_count.latitude = latitude
+        unique_visitor_count.longitude = longitude
+        unique_visitor_count.address = address
         unique_visitor_count.save()
 
     return unique_visitor_count
